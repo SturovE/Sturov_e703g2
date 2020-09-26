@@ -16,7 +16,8 @@ int main(int argc, char* argv[])
 			perror("fork");
 			exit(1);
 		case 0:
-
+		
+			printf(" CHILD: Это процесс-потомок!\n");
 			printf(" CHILD: Выход!\n");
 			exit(rv);
 		default:
