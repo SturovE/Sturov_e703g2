@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+int main(int argc, char* argv[])
+{
+	pid_t pid;
+	int rv;
+
+	switch (pid = fork())
+	{
+		case -1:
+
+			perror("fork");
+			exit(1);
+		case 0:
+
+			printf(" CHILD: Выход!\n");
+			exit(rv);
+		default:
+
+			printf("PARENT: Это процесс-родитель!\n");
+			wait(&rv);
+			printf("PARENT: Код возврата потомка:%d\n", WEXITSTATUS(rv));
+	}
+
+	return 0;
+}
