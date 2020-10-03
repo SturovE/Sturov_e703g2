@@ -24,8 +24,8 @@ int main(int argc, char* argv[])
 		default:
 		
 			wait(&rv);
-			printf("PARENT: Это процесс-родитель!\n");
-			printf("PARENT: Код возврата потомка:%d\n", WEXITSTATUS(rv));
+			printf(" PARENT: Это процесс-родитель!\n");
+			printf(" PARENT: Код возврата потомка:%d\n", WEXITSTATUS(rv));
 	}
 
 	return 0;
