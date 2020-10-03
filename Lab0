@@ -19,11 +19,12 @@ int main(int argc, char* argv[])
 		
 			printf(" CHILD: Это процесс-потомок!\n");
 			printf(" CHILD: Выход!\n");
-			exit(rv);
+			execpv(argv[1], &argv[1])
+			exit(3);
 		default:
-
-			printf("PARENT: Это процесс-родитель!\n");
+		
 			wait(&rv);
+			printf("PARENT: Это процесс-родитель!\n");
 			printf("PARENT: Код возврата потомка:%d\n", WEXITSTATUS(rv));
 	}
 
